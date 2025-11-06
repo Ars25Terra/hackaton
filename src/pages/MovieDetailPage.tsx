@@ -1,27 +1,28 @@
-import { useMemo } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import {
-  Box,
-  Typography,
-  Chip,
-  Paper,
-  Button,
-  CircularProgress,
-  Divider,
-  Stack,
-} from '@mui/material';
 import { Icon } from '@iconify/react';
-import { useData } from '../hooks/useData';
-import { combineShowtimeData, filterUpcomingShowtimes, filterShowtimesByMovie, groupShowtimesByDate } from '../utils/showtimeUtils';
-import { formatDate } from '../utils/dateUtils';
-import { ShowtimeChip } from '../components/ShowtimeChip';
+import {
+    Box,
+    Button,
+    Chip,
+    CircularProgress,
+    Divider,
+    Paper,
+    Stack,
+    Typography,
+} from '@mui/material';
+import { useMemo, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { EmptyState } from '../components/EmptyState';
+import { ShowtimeChip } from '../components/ShowtimeChip';
+import { useData } from '../hooks/useData';
 import { ShowtimeWithDetails } from '../types';
+import { formatDate } from '../utils/dateUtils';
+import { combineShowtimeData, filterShowtimesByMovie, filterUpcomingShowtimes, groupShowtimesByDate } from '../utils/showtimeUtils';
 
 export function MovieDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { movies, halls, showtimes, loading } = useData();
+  const [imgError, setImgError] = useState(false);
 
   const movie = useMemo(() => {
     return movies.find(m => m.id === id);
@@ -62,13 +63,15 @@ export function MovieDetailPage() {
         <Box sx={{ display: 'flex', gap: 4, flexDirection: { xs: 'column', md: 'row' } }}>
           <Box
             component="img"
-            src={movie.coverImageUrl}
+            src={imgError ? '/placeholder-movie.svg' : movie.coverImageUrl}
             alt={movie.title}
+            onError={() => setImgError(true)}
             sx={{
               width: { xs: 1, md: 300 },
               height: { xs: 'auto', md: 450 },
               objectFit: 'cover',
               borderRadius: 2,
+              bgcolor: '#2a2a2a',
             }}
           />
 

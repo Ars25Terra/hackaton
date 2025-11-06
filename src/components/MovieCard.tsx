@@ -1,5 +1,6 @@
-import { Card, CardMedia, CardContent, Typography, Chip, Box } from '@mui/material';
 import { Icon } from '@iconify/react';
+import { Box, Card, CardContent, CardMedia, Chip, Typography } from '@mui/material';
+import { useState } from 'react';
 import { Movie } from '../types';
 
 interface MovieCardProps {
@@ -8,6 +9,8 @@ interface MovieCardProps {
 }
 
 export function MovieCard({ movie, onClick }: MovieCardProps) {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <Card
       sx={{
@@ -26,9 +29,10 @@ export function MovieCard({ movie, onClick }: MovieCardProps) {
       <CardMedia
         component="img"
         height={360}
-        image={movie.coverImageUrl}
+        image={imgError ? '/placeholder-movie.svg' : movie.coverImageUrl}
         alt={movie.title}
-        sx={{ objectFit: 'cover' }}
+        onError={() => setImgError(true)}
+        sx={{ objectFit: 'cover', bgcolor: '#2a2a2a' }}
       />
       <CardContent sx={{ flexGrow: 1 }}>
         <Typography variant="h6" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
