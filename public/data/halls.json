@@ -1,0 +1,33 @@
+[
+  {
+    "id": "h1",
+    "name": "Hall 1 - IMAX",
+    "capacity": 350,
+    "features": ["IMAX", "Dolby Atmos", "3D"]
+  },
+  {
+    "id": "h2",
+    "name": "Hall 2 - Premium",
+    "capacity": 250,
+    "features": ["Dolby Atmos", "Premium Seats", "3D"]
+  },
+  {
+    "id": "h3",
+    "name": "Hall 3 - Standard",
+    "capacity": 180,
+    "features": ["Digital Sound", "2D/3D"]
+  },
+  {
+    "id": "h4",
+    "name": "Hall 4 - Luxury",
+    "capacity": 120,
+    "features": ["Reclining Seats", "VIP Lounge", "Premium Sound"]
+  },
+  {
+    "id": "h5",
+    "name": "Hall 5 - Small Screen",
+    "capacity": 80,
+    "features": ["Intimate Setting", "Digital Projection"]
+  }
+]
+

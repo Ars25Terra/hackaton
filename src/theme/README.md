@@ -41,39 +41,29 @@ function MyComponent() {
 
 ### With Material-UI (MUI)
 
-```tsx
-import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material';
-import { useTheme } from './theme';
+A helper function is already provided in `src/theme/muiTheme.ts`:
 
-function App() {
+```tsx
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
+import { Button } from '@mui/material';
+import { useTheme } from './theme';
+import { createMuiTheme } from './theme/muiTheme';
+
+function MyComponent() {
   const { palette, mode } = useTheme();
-  
-  const muiTheme = createTheme({
-    palette: {
-      mode,
-      primary: {
-        main: palette.primary.main,
-        light: palette.primary.light,
-        dark: palette.primary.dark,
-      },
-      background: {
-        default: palette.background.default,
-        paper: palette.background.paper,
-      },
-      text: {
-        primary: palette.text.primary,
-        secondary: palette.text.secondary,
-      },
-    },
-  });
+  const muiTheme = createMuiTheme(palette, mode);
   
   return (
     <MuiThemeProvider theme={muiTheme}>
-      {/* Your MUI components */}
+      <Button variant="contained" color="primary">
+        MUI Button
+      </Button>
     </MuiThemeProvider>
   );
 }
 ```
+
+See `src/examples/MuiExample.tsx` for a complete working example.
 
 ### With Tailwind CSS
 

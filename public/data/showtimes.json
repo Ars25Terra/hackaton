@@ -1,0 +1,65 @@
+[
+  {"id": "s1", "movieId": "m1", "hallId": "h1", "date": "2025-11-06", "startTime": "10:00"},
+  {"id": "s2", "movieId": "m1", "hallId": "h1", "date": "2025-11-06", "startTime": "14:30"},
+  {"id": "s3", "movieId": "m1", "hallId": "h1", "date": "2025-11-06", "startTime": "19:00"},
+  {"id": "s4", "movieId": "m1", "hallId": "h2", "date": "2025-11-06", "startTime": "16:00"},
+  {"id": "s5", "movieId": "m1", "hallId": "h1", "date": "2025-11-07", "startTime": "11:00"},
+  {"id": "s6", "movieId": "m1", "hallId": "h1", "date": "2025-11-07", "startTime": "15:30"},
+  {"id": "s7", "movieId": "m1", "hallId": "h1", "date": "2025-11-07", "startTime": "20:00"},
+  
+  {"id": "s8", "movieId": "m2", "hallId": "h2", "date": "2025-11-06", "startTime": "12:00"},
+  {"id": "s9", "movieId": "m2", "hallId": "h2", "date": "2025-11-06", "startTime": "18:30"},
+  {"id": "s10", "movieId": "m2", "hallId": "h3", "date": "2025-11-06", "startTime": "21:00"},
+  {"id": "s11", "movieId": "m2", "hallId": "h2", "date": "2025-11-07", "startTime": "13:00"},
+  {"id": "s12", "movieId": "m2", "hallId": "h3", "date": "2025-11-07", "startTime": "17:30"},
+  {"id": "s13", "movieId": "m2", "hallId": "h2", "date": "2025-11-08", "startTime": "14:00"},
+  
+  {"id": "s14", "movieId": "m3", "hallId": "h3", "date": "2025-11-06", "startTime": "11:30"},
+  {"id": "s15", "movieId": "m3", "hallId": "h3", "date": "2025-11-06", "startTime": "15:00"},
+  {"id": "s16", "movieId": "m3", "hallId": "h5", "date": "2025-11-06", "startTime": "17:30"},
+  {"id": "s17", "movieId": "m3", "hallId": "h3", "date": "2025-11-07", "startTime": "12:00"},
+  {"id": "s18", "movieId": "m3", "hallId": "h5", "date": "2025-11-07", "startTime": "19:00"},
+  
+  {"id": "s19", "movieId": "m4", "hallId": "h4", "date": "2025-11-06", "startTime": "13:00"},
+  {"id": "s20", "movieId": "m4", "hallId": "h4", "date": "2025-11-06", "startTime": "17:00"},
+  {"id": "s21", "movieId": "m4", "hallId": "h5", "date": "2025-11-06", "startTime": "20:30"},
+  {"id": "s22", "movieId": "m4", "hallId": "h4", "date": "2025-11-07", "startTime": "14:30"},
+  {"id": "s23", "movieId": "m4", "hallId": "h4", "date": "2025-11-08", "startTime": "16:00"},
+  
+  {"id": "s24", "movieId": "m5", "hallId": "h2", "date": "2025-11-06", "startTime": "10:30"},
+  {"id": "s25", "movieId": "m5", "hallId": "h1", "date": "2025-11-06", "startTime": "22:00"},
+  {"id": "s26", "movieId": "m5", "hallId": "h2", "date": "2025-11-07", "startTime": "11:30"},
+  {"id": "s27", "movieId": "m5", "hallId": "h3", "date": "2025-11-07", "startTime": "22:30"},
+  {"id": "s28", "movieId": "m5", "hallId": "h1", "date": "2025-11-08", "startTime": "21:00"},
+  
+  {"id": "s29", "movieId": "m6", "hallId": "h3", "date": "2025-11-06", "startTime": "19:00"},
+  {"id": "s30", "movieId": "m6", "hallId": "h5", "date": "2025-11-06", "startTime": "22:30"},
+  {"id": "s31", "movieId": "m6", "hallId": "h3", "date": "2025-11-07", "startTime": "20:00"},
+  {"id": "s32", "movieId": "m6", "hallId": "h5", "date": "2025-11-07", "startTime": "23:00"},
+  {"id": "s33", "movieId": "m6", "hallId": "h3", "date": "2025-11-08", "startTime": "21:30"},
+  
+  {"id": "s34", "movieId": "m1", "hallId": "h1", "date": "2025-11-08", "startTime": "12:00"},
+  {"id": "s35", "movieId": "m1", "hallId": "h2", "date": "2025-11-08", "startTime": "17:30"},
+  {"id": "s36", "movieId": "m2", "hallId": "h2", "date": "2025-11-09", "startTime": "15:00"},
+  {"id": "s37", "movieId": "m3", "hallId": "h3", "date": "2025-11-09", "startTime": "13:30"},
+  {"id": "s38", "movieId": "m4", "hallId": "h4", "date": "2025-11-09", "startTime": "18:00"},
+  {"id": "s39", "movieId": "m5", "hallId": "h1", "date": "2025-11-09", "startTime": "20:30"},
+  {"id": "s40", "movieId": "m6", "hallId": "h5", "date": "2025-11-09", "startTime": "22:00"},
+  
+  {"id": "s41", "movieId": "m1", "hallId": "h1", "date": "2025-11-10", "startTime": "11:00"},
+  {"id": "s42", "movieId": "m2", "hallId": "h2", "date": "2025-11-10", "startTime": "14:00"},
+  {"id": "s43", "movieId": "m3", "hallId": "h3", "date": "2025-11-10", "startTime": "16:30"},
+  {"id": "s44", "movieId": "m4", "hallId": "h4", "date": "2025-11-10", "startTime": "19:00"},
+  {"id": "s45", "movieId": "m5", "hallId": "h2", "date": "2025-11-10", "startTime": "21:30"},
+  
+  {"id": "s46", "movieId": "m1", "hallId": "h1", "date": "2025-11-11", "startTime": "13:00"},
+  {"id": "s47", "movieId": "m2", "hallId": "h3", "date": "2025-11-11", "startTime": "16:00"},
+  {"id": "s48", "movieId": "m3", "hallId": "h5", "date": "2025-11-11", "startTime": "18:30"},
+  {"id": "s49", "movieId": "m5", "hallId": "h1", "date": "2025-11-11", "startTime": "22:00"},
+  
+  {"id": "s50", "movieId": "m1", "hallId": "h1", "date": "2025-11-12", "startTime": "10:30"},
+  {"id": "s51", "movieId": "m2", "hallId": "h2", "date": "2025-11-12", "startTime": "13:30"},
+  {"id": "s52", "movieId": "m4", "hallId": "h4", "date": "2025-11-12", "startTime": "17:00"},
+  {"id": "s53", "movieId": "m6", "hallId": "h3", "date": "2025-11-12", "startTime": "20:30"}
+]
+
