@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import { Box, InputAdornment, TextField } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 interface MovieSearchFilterProps {
   searchQuery: string;
@@ -10,11 +11,13 @@ export function MovieSearchFilter({
   searchQuery,
   onSearchChange,
 }: MovieSearchFilterProps) {
+  const { t } = useTranslation();
+
   return (
     <Box sx={{ mb: 4 }}>
       <TextField
         fullWidth
-        placeholder="Search by title, genre, or director..."
+        placeholder={t("movies.search")}
         value={searchQuery}
         onChange={(e) => onSearchChange(e.target.value)}
         InputProps={{
@@ -51,4 +54,3 @@ export function MovieSearchFilter({
     </Box>
   );
 }
-

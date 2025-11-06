@@ -10,12 +10,14 @@ import {
   Typography,
 } from "@mui/material";
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 import { EmptyState } from "../components/EmptyState";
 import { ShowtimeChip } from "../components/ShowtimeChip";
 import { useData } from "../hooks/useData";
 import { ShowtimeWithDetails } from "../types";
 import { formatDate, getDateRange } from "../utils/dateUtils";
+import { getTranslatedHall } from "../utils/i18nData";
 import {
   combineShowtimeData,
   filterShowtimesByHall,
@@ -27,11 +29,13 @@ import {
 export function HallDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { movies, halls, showtimes, loading } = useData();
 
   const hall = useMemo(() => {
-    return halls.find((h) => h.id === id);
-  }, [halls, id]);
+    const foundHall = halls.find((h) => h.id === id);
+    return foundHall ? getTranslatedHall(foundHall, t) : undefined;
+  }, [halls, id, t]);
 
   const groupedShowtimes = useMemo(() => {
     if (!id) return new Map();
@@ -56,7 +60,9 @@ export function HallDetailPage() {
   }
 
   if (!hall) {
-    return <EmptyState message="Hall not found" icon="lucide:video-off" />;
+    return (
+      <EmptyState message={t("halls.hallNotFound")} icon="lucide:video-off" />
+    );
   }
 
   return (
@@ -66,7 +72,7 @@ export function HallDetailPage() {
         onClick={() => navigate("/halls")}
         sx={{ mb: 3 }}
       >
-        Back to Halls
+        {t("halls.backToHalls")}
       </Button>
 
       <Paper sx={{ p: 3, mb: 4 }}>
@@ -82,7 +88,7 @@ export function HallDetailPage() {
         <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
           <Icon icon="lucide:users" width={24} />
           <Typography variant="h6" color="text.secondary">
-            Capacity: {hall.capacity} seats
+            {t("halls.capacity", { count: hall.capacity })}
           </Typography>
         </Box>
 
@@ -94,11 +100,11 @@ export function HallDetailPage() {
       </Paper>
 
       <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
-        Schedule
+        {t("halls.schedule")}
       </Typography>
 
       {groupedShowtimes.size === 0 ? (
-        <EmptyState message={`No showtimes available for ${hall.name}`} />
+        <EmptyState message={t("halls.noSchedule", { name: hall.name })} />
       ) : (
         <Stack spacing={3}>
           {Array.from(groupedShowtimes.entries()).map(([date, times]) => (

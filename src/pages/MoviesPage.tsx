@@ -10,26 +10,32 @@ import {
   Typography,
 } from "@mui/material";
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { Virtuoso } from "react-virtuoso";
 import { EmptyState } from "../components/EmptyState";
 import { MovieCard } from "../components/MovieCard";
 import { MovieSearchFilter } from "../components/MovieSearchFilter";
 import { useData } from "../hooks/useData";
+import { getTranslatedMovie } from "../utils/i18nData";
 import { filterMoviesBySearch, sortMovies } from "../utils/movieUtils";
 
 type ViewMode = "grid" | "table";
 
 export function MoviesPage() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { movies, loading } = useData();
   const [searchQuery, setSearchQuery] = useState("");
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
 
   const filteredAndSortedMovies = useMemo(() => {
-    const filtered = filterMoviesBySearch(movies, searchQuery);
+    const translatedMovies = movies.map((movie) =>
+      getTranslatedMovie(movie, t)
+    );
+    const filtered = filterMoviesBySearch(translatedMovies, searchQuery);
     return sortMovies(filtered);
-  }, [movies, searchQuery]);
+  }, [movies, searchQuery, t]);
 
   if (loading) {
     return (
@@ -50,7 +56,7 @@ export function MoviesPage() {
         }}
       >
         <Typography variant="h4" component="h1" sx={{ fontWeight: 700 }}>
-          Movies
+          {t("movies.title")}
         </Typography>
 
         <ToggleButtonGroup
@@ -77,8 +83,8 @@ export function MoviesPage() {
         <EmptyState
           message={
             searchQuery
-              ? `No movies found for "${searchQuery}"`
-              : "No movies available"
+              ? t("movies.noResults", { query: searchQuery })
+              : t("movies.noMovies")
           }
           icon="lucide:film"
         />
@@ -86,8 +92,7 @@ export function MoviesPage() {
         <>
           {searchQuery && (
             <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-              Found {filteredAndSortedMovies.length}{" "}
-              {filteredAndSortedMovies.length === 1 ? "movie" : "movies"}
+              {t("movies.found", { count: filteredAndSortedMovies.length })}
             </Typography>
           )}
 
@@ -117,19 +122,19 @@ export function MoviesPage() {
                 }}
               >
                 <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                  Title
+                  {t("table.title")}
                 </Typography>
                 <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                  Genre
+                  {t("table.genre")}
                 </Typography>
                 <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                  Duration
+                  {t("table.duration")}
                 </Typography>
                 <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                  Rating
+                  {t("table.rating")}
                 </Typography>
                 <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                  Director
+                  {t("table.director")}
                 </Typography>
               </Box>
               <Virtuoso

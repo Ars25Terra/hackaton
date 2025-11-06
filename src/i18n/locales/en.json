@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "movies": "Movies",
+    "halls": "Halls",
+    "schedule": "Schedule"
+  },
+  "movies": {
+    "title": "Movies",
+    "search": "Search movies...",
+    "noResults": "No movies found for \"{{query}}\"",
+    "noMovies": "No movies available",
+    "found": "Found {{count}} movie",
+    "found_other": "Found {{count}} movies",
+    "backToMovies": "Back to Movies",
+    "showtimes": "Showtimes",
+    "noShowtimes": "No showtimes available for {{title}}",
+    "movieNotFound": "Movie not found"
+  },
+  "halls": {
+    "title": "Halls",
+    "capacity": "Capacity: {{count}} seats",
+    "backToHalls": "Back to Halls",
+    "schedule": "Schedule",
+    "noSchedule": "No showtimes available for {{name}}",
+    "noHalls": "No halls available",
+    "hallNotFound": "Hall not found"
+  },
+  "schedule": {
+    "title": "Complete Schedule",
+    "filterByDate": "Filter by date",
+    "filterByMovie": "Filter by movie",
+    "allDates": "All dates",
+    "allMovies": "All movies",
+    "noSchedule": "No showtimes available",
+    "noScheduleForDate": "No showtimes available for {{date}}"
+  },
+  "movie": {
+    "duration": "{{duration}} min",
+    "directedBy": "Directed by {{director}}",
+    "genre": "Genre",
+    "rating": "Rating"
+  },
+  "table": {
+    "title": "Title",
+    "genre": "Genre",
+    "duration": "Duration",
+    "rating": "Rating",
+    "director": "Director"
+  },
+  "common": {
+    "loading": "Loading..."
+  },
+  "movieData": {
+    "m1": {
+      "title": "Cosmic Odyssey",
+      "description": "An epic journey through space and time as humanity searches for a new home among the stars. Stunning visuals and thought-provoking themes make this a must-see cinematic experience.",
+      "genre": "Sci-Fi Adventure"
+    },
+    "m2": {
+      "title": "The Last Detective",
+      "description": "A hardboiled detective faces his most challenging case yet in this neo-noir thriller. As the bodies pile up, he must confront demons from his past to catch a killer.",
+      "genre": "Crime Thriller"
+    },
+    "m3": {
+      "title": "Laugh Out Loud",
+      "description": "A hilarious comedy about a struggling comedian who accidentally becomes an internet sensation. Feel-good entertainment perfect for the whole family.",
+      "genre": "Comedy"
+    },
+    "m4": {
+      "title": "Eternal Love",
+      "description": "A timeless love story that spans decades. Two souls destined to be together face the challenges of life, war, and time itself in this emotional journey.",
+      "genre": "Romance Drama"
+    },
+    "m5": {
+      "title": "Shadow Warriors",
+      "description": "An elite team of special operatives must stop a global threat in this explosive action thriller. Non-stop adrenaline from start to finish.",
+      "genre": "Action"
+    },
+    "m6": {
+      "title": "The Haunting Hour",
+      "description": "A family moves into a seemingly perfect house, only to discover it harbors dark secrets. Terrifying supernatural horror that will keep you on the edge of your seat.",
+      "genre": "Horror"
+    }
+  },
+  "hallData": {
+    "h1": {
+      "name": "Grand Hall",
+      "features": {
+        "imax": "IMAX",
+        "dolbyatmos": "Dolby Atmos",
+        "3d": "3D"
+      }
+    },
+    "h2": {
+      "name": "Premium Hall",
+      "features": {
+        "dolbyatmos": "Dolby Atmos",
+        "premiumseats": "Premium Seats",
+        "3d": "3D"
+      }
+    },
+    "h3": {
+      "name": "Standard Hall",
+      "features": {
+        "digitalsound": "Digital Sound",
+        "2d3d": "2D/3D"
+      }
+    },
+    "h4": {
+      "name": "Luxury Hall",
+      "features": {
+        "recliningseats": "Reclining Seats",
+        "viplounge": "VIP Lounge",
+        "premiumsound": "Premium Sound"
+      }
+    },
+    "h5": {
+      "name": "Small Screen",
+      "features": {
+        "intimatesetting": "Intimate Setting",
+        "digitalprojection": "Digital Projection"
+      }
+    }
+  }
+}
+

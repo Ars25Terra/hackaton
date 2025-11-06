@@ -10,12 +10,14 @@ import {
   Typography,
 } from "@mui/material";
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate, useParams } from "react-router-dom";
 import { EmptyState } from "../components/EmptyState";
 import { ShowtimeChip } from "../components/ShowtimeChip";
 import { useData } from "../hooks/useData";
 import { ShowtimeWithDetails } from "../types";
 import { formatDate } from "../utils/dateUtils";
+import { getTranslatedMovie } from "../utils/i18nData";
 import {
   combineShowtimeData,
   filterShowtimesByMovie,
@@ -27,12 +29,14 @@ import placeholderImage from "/placeholder-movie.svg";
 export function MovieDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { movies, halls, showtimes, loading } = useData();
   const [imgError, setImgError] = useState(false);
 
   const movie = useMemo(() => {
-    return movies.find((m) => m.id === id);
-  }, [movies, id]);
+    const foundMovie = movies.find((m) => m.id === id);
+    return foundMovie ? getTranslatedMovie(foundMovie, t) : undefined;
+  }, [movies, id, t]);
 
   const groupedShowtimes = useMemo(() => {
     if (!id) return new Map();
@@ -52,7 +56,9 @@ export function MovieDetailPage() {
   }
 
   if (!movie) {
-    return <EmptyState message="Movie not found" icon="lucide:film-x" />;
+    return (
+      <EmptyState message={t("movies.movieNotFound")} icon="lucide:film-x" />
+    );
   }
 
   return (
@@ -62,7 +68,7 @@ export function MovieDetailPage() {
         onClick={() => navigate("/")}
         sx={{ mb: 3 }}
       >
-        Back to Movies
+        {t("movies.backToMovies")}
       </Button>
 
       <Paper sx={{ p: 3, mb: 4 }}>
@@ -122,11 +128,11 @@ export function MovieDetailPage() {
       </Paper>
 
       <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
-        Showtimes
+        {t("movies.showtimes")}
       </Typography>
 
       {groupedShowtimes.size === 0 ? (
-        <EmptyState message={`No showtimes available for ${movie.title}`} />
+        <EmptyState message={t("movies.noShowtimes", { title: movie.title })} />
       ) : (
         <Stack spacing={3}>
           {Array.from(groupedShowtimes.entries()).map(([date, times]) => (

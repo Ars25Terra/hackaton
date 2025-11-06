@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "movies": "Filme",
+    "halls": "Säle",
+    "schedule": "Spielplan"
+  },
+  "movies": {
+    "title": "Filme",
+    "search": "Filme suchen...",
+    "noResults": "Keine Filme gefunden für \"{{query}}\"",
+    "noMovies": "Keine Filme verfügbar",
+    "found": "{{count}} Film gefunden",
+    "found_other": "{{count}} Filme gefunden",
+    "backToMovies": "Zurück zu Filmen",
+    "showtimes": "Vorstellungen",
+    "noShowtimes": "Keine Vorstellungen verfügbar für {{title}}",
+    "movieNotFound": "Film nicht gefunden"
+  },
+  "halls": {
+    "title": "Säle",
+    "capacity": "Kapazität: {{count}} Plätze",
+    "backToHalls": "Zurück zu Sälen",
+    "schedule": "Spielplan",
+    "noSchedule": "Keine Vorstellungen verfügbar für {{name}}",
+    "noHalls": "Keine Säle verfügbar",
+    "hallNotFound": "Saal nicht gefunden"
+  },
+  "schedule": {
+    "title": "Kompletter Spielplan",
+    "filterByDate": "Nach Datum filtern",
+    "filterByMovie": "Nach Film filtern",
+    "allDates": "Alle Daten",
+    "allMovies": "Alle Filme",
+    "noSchedule": "Keine Vorstellungen verfügbar",
+    "noScheduleForDate": "Keine Vorstellungen verfügbar für {{date}}"
+  },
+  "movie": {
+    "duration": "{{duration}} Min",
+    "directedBy": "Regie: {{director}}",
+    "genre": "Genre",
+    "rating": "Bewertung"
+  },
+  "table": {
+    "title": "Titel",
+    "genre": "Genre",
+    "duration": "Dauer",
+    "rating": "Bewertung",
+    "director": "Regisseur"
+  },
+  "common": {
+    "loading": "Laden..."
+  },
+  "movieData": {
+    "m1": {
+      "title": "Kosmische Odyssee",
+      "description": "Eine epische Reise durch Raum und Zeit, während die Menschheit nach einem neuen Zuhause in den Sternen sucht. Atemberaubende Bilder und zum Nachdenken anregende Themen machen dies zu einem unverzichtbaren Kinoerlebnis.",
+      "genre": "Sci-Fi-Abenteuer"
+    },
+    "m2": {
+      "title": "Der letzte Detektiv",
+      "description": "Ein abgehärteter Detektiv steht vor seinem bisher schwierigsten Fall in diesem Neo-Noir-Thriller. Während sich die Leichen häufen, muss er sich den Dämonen seiner Vergangenheit stellen, um einen Mörder zu fassen.",
+      "genre": "Krimi-Thriller"
+    },
+    "m3": {
+      "title": "Lach dich kaputt",
+      "description": "Eine urkomische Komödie über einen Comedian, der versehentlich zur Internet-Sensation wird. Gute-Laune-Unterhaltung, perfekt für die ganze Familie.",
+      "genre": "Komödie"
+    },
+    "m4": {
+      "title": "Ewige Liebe",
+      "description": "Eine zeitlose Liebesgeschichte, die Jahrzehnte umspannt. Zwei Seelen, die füreinander bestimmt sind, stellen sich den Herausforderungen des Lebens, des Krieges und der Zeit selbst auf dieser emotionalen Reise.",
+      "genre": "Romantisches Drama"
+    },
+    "m5": {
+      "title": "Schattenkrieger",
+      "description": "Ein Elite-Team von Spezialeinheiten muss eine globale Bedrohung in diesem explosiven Action-Thriller stoppen. Non-Stop Adrenalin von Anfang bis Ende.",
+      "genre": "Action"
+    },
+    "m6": {
+      "title": "Die Geisterstunde",
+      "description": "Eine Familie zieht in ein scheinbar perfektes Haus, nur um zu entdecken, dass es dunkle Geheimnisse birgt. Erschreckender übernatürlicher Horror, der Sie auf der Kante Ihres Sitzes halten wird.",
+      "genre": "Horror"
+    }
+  },
+  "hallData": {
+    "h1": {
+      "name": "Großer Saal",
+      "features": {
+        "imax": "IMAX",
+        "dolbyatmos": "Dolby Atmos",
+        "3d": "3D"
+      }
+    },
+    "h2": {
+      "name": "Premium-Saal",
+      "features": {
+        "dolbyatmos": "Dolby Atmos",
+        "premiumseats": "Premium-Sitze",
+        "3d": "3D"
+      }
+    },
+    "h3": {
+      "name": "Standard-Saal",
+      "features": {
+        "digitalsound": "Digital Sound",
+        "2d3d": "2D/3D"
+      }
+    },
+    "h4": {
+      "name": "Luxus-Saal",
+      "features": {
+        "recliningseats": "Liegesitze",
+        "viplounge": "VIP-Lounge",
+        "premiumsound": "Premium-Sound"
+      }
+    },
+    "h5": {
+      "name": "Kleine Leinwand",
+      "features": {
+        "intimatesetting": "Intime Atmosphäre",
+        "digitalprojection": "Digitalprojektion"
+      }
+    }
+  }
+}
+
