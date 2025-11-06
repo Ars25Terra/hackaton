@@ -1,13 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { useTheme, createMuiTheme } from "./theme";
+import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { MainLayout } from "./layouts/MainLayout";
-import { MoviesPage } from "./pages/MoviesPage";
-import { MovieDetailPage } from "./pages/MovieDetailPage";
-import { HallsPage } from "./pages/HallsPage";
 import { HallDetailPage } from "./pages/HallDetailPage";
+import { HallsPage } from "./pages/HallsPage";
+import { MovieDetailPage } from "./pages/MovieDetailPage";
+import { MoviesPage } from "./pages/MoviesPage";
 import { SchedulePage } from "./pages/SchedulePage";
+import { createMuiTheme, useTheme } from "./theme";
 
 function AppContent() {
   const { palette, mode } = useTheme();
