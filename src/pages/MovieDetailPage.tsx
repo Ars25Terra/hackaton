@@ -96,6 +96,13 @@ export function MovieDetailPage() {
               {movie.title}
             </Typography>
 
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
+              <Icon icon="lucide:user" width={20} />
+              <Typography variant="subtitle1" color="text.secondary">
+                Directed by {movie.director}
+              </Typography>
+            </Box>
+
             <Box sx={{ display: "flex", gap: 1, mb: 2, flexWrap: "wrap" }}>
               <Chip label={movie.genre} color="primary" />
               <Chip label={movie.rating} />

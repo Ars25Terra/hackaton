@@ -6,6 +6,7 @@ export interface Movie {
   rating: string;
   coverImageUrl: string;
   description: string;
+  director: string;
 }
 
 export interface Hall {
