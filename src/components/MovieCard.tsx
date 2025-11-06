@@ -1,7 +1,14 @@
-import { Icon } from '@iconify/react';
-import { Box, Card, CardContent, CardMedia, Chip, Typography } from '@mui/material';
-import { useState } from 'react';
-import { Movie } from '../types';
+import { Icon } from "@iconify/react";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Chip,
+  Typography,
+} from "@mui/material";
+import { useState } from "react";
+import { Movie } from "../types";
 
 interface MovieCardProps {
   movie: Movie;
@@ -15,12 +22,12 @@ export function MovieCard({ movie, onClick }: MovieCardProps) {
     <Card
       sx={{
         height: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        cursor: 'pointer',
-        transition: 'transform 0.2s, box-shadow 0.2s',
-        '&:hover': {
-          transform: 'translateY(-4px)',
+        display: "flex",
+        flexDirection: "column",
+        cursor: "pointer",
+        transition: "transform 0.2s, box-shadow 0.2s",
+        "&:hover": {
+          transform: "translateY(-4px)",
           boxShadow: 6,
         },
       }}
@@ -29,29 +36,43 @@ export function MovieCard({ movie, onClick }: MovieCardProps) {
       <CardMedia
         component="img"
         height={360}
-        image={imgError ? '/placeholder-movie.svg' : movie.coverImageUrl}
+        image={imgError ? "/placeholder-movie.svg" : movie.coverImageUrl}
         alt={movie.title}
         onError={() => setImgError(true)}
-        sx={{ objectFit: 'cover', bgcolor: '#2a2a2a' }}
+        sx={{ objectFit: "cover", bgcolor: "#2a2a2a" }}
       />
       <CardContent sx={{ flexGrow: 1 }}>
-        <Typography variant="h6" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
+        <Typography
+          variant="h6"
+          component="h2"
+          gutterBottom
+          sx={{ fontWeight: 600 }}
+        >
           {movie.title}
         </Typography>
-        
-        <Box sx={{ display: 'flex', gap: 1, mb: 1, flexWrap: 'wrap' }}>
-          <Chip label={movie.genre} size="small" color="primary" variant="outlined" />
+
+        <Box sx={{ display: "flex", gap: 1, mb: 1, flexWrap: "wrap" }}>
+          <Chip
+            label={movie.genre}
+            size="small"
+            color="primary"
+            variant="outlined"
+          />
           <Chip label={movie.rating} size="small" />
         </Box>
-        
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, color: 'text.secondary' }}>
+
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
+            color: "text.secondary",
+          }}
+        >
           <Icon icon="lucide:clock" width={16} />
-          <Typography variant="body2">
-            {movie.duration} min
-          </Typography>
+          <Typography variant="body2">{movie.duration} min</Typography>
         </Box>
       </CardContent>
     </Card>
   );
 }
-

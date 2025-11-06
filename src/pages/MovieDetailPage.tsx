@@ -1,22 +1,27 @@
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react";
 import {
-    Box,
-    Button,
-    Chip,
-    CircularProgress,
-    Divider,
-    Paper,
-    Stack,
-    Typography,
-} from '@mui/material';
-import { useMemo, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { EmptyState } from '../components/EmptyState';
-import { ShowtimeChip } from '../components/ShowtimeChip';
-import { useData } from '../hooks/useData';
-import { ShowtimeWithDetails } from '../types';
-import { formatDate } from '../utils/dateUtils';
-import { combineShowtimeData, filterShowtimesByMovie, filterUpcomingShowtimes, groupShowtimesByDate } from '../utils/showtimeUtils';
+  Box,
+  Button,
+  Chip,
+  CircularProgress,
+  Divider,
+  Paper,
+  Stack,
+  Typography,
+} from "@mui/material";
+import { useMemo, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { EmptyState } from "../components/EmptyState";
+import { ShowtimeChip } from "../components/ShowtimeChip";
+import { useData } from "../hooks/useData";
+import { ShowtimeWithDetails } from "../types";
+import { formatDate } from "../utils/dateUtils";
+import {
+  combineShowtimeData,
+  filterShowtimesByMovie,
+  filterUpcomingShowtimes,
+  groupShowtimesByDate,
+} from "../utils/showtimeUtils";
 
 export function MovieDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -25,12 +30,12 @@ export function MovieDetailPage() {
   const [imgError, setImgError] = useState(false);
 
   const movie = useMemo(() => {
-    return movies.find(m => m.id === id);
+    return movies.find((m) => m.id === id);
   }, [movies, id]);
 
   const groupedShowtimes = useMemo(() => {
     if (!id) return new Map();
-    
+
     const combined = combineShowtimeData(showtimes, movies, halls);
     const upcoming = filterUpcomingShowtimes(combined);
     const forMovie = filterShowtimesByMovie(upcoming, id);
@@ -39,7 +44,7 @@ export function MovieDetailPage() {
 
   if (loading) {
     return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}>
+      <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>
         <CircularProgress />
       </Box>
     );
@@ -53,34 +58,45 @@ export function MovieDetailPage() {
     <Box>
       <Button
         startIcon={<Icon icon="lucide:arrow-left" />}
-        onClick={() => navigate('/')}
+        onClick={() => navigate("/")}
         sx={{ mb: 3 }}
       >
         Back to Movies
       </Button>
 
       <Paper sx={{ p: 3, mb: 4 }}>
-        <Box sx={{ display: 'flex', gap: 4, flexDirection: { xs: 'column', md: 'row' } }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 4,
+            flexDirection: { xs: "column", md: "row" },
+          }}
+        >
           <Box
             component="img"
-            src={imgError ? '/placeholder-movie.svg' : movie.coverImageUrl}
+            src={imgError ? "/placeholder-movie.svg" : movie.coverImageUrl}
             alt={movie.title}
             onError={() => setImgError(true)}
             sx={{
               width: { xs: 1, md: 300 },
-              height: { xs: 'auto', md: 450 },
-              objectFit: 'cover',
+              height: { xs: "auto", md: 450 },
+              objectFit: "cover",
               borderRadius: 2,
-              bgcolor: '#2a2a2a',
+              bgcolor: "#2a2a2a",
             }}
           />
 
           <Box sx={{ flexGrow: 1 }}>
-            <Typography variant="h4" component="h1" gutterBottom sx={{ fontWeight: 700 }}>
+            <Typography
+              variant="h4"
+              component="h1"
+              gutterBottom
+              sx={{ fontWeight: 700 }}
+            >
               {movie.title}
             </Typography>
 
-            <Box sx={{ display: 'flex', gap: 1, mb: 2, flexWrap: 'wrap' }}>
+            <Box sx={{ display: "flex", gap: 1, mb: 2, flexWrap: "wrap" }}>
               <Chip label={movie.genre} color="primary" />
               <Chip label={movie.rating} />
               <Chip
@@ -113,18 +129,26 @@ export function MovieDetailPage() {
               <Divider sx={{ mb: 2 }} />
               <Stack spacing={2}>
                 {times.map((showtime: ShowtimeWithDetails) => (
-                  <Box key={showtime.id} sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                  <Box
+                    key={showtime.id}
+                    sx={{ display: "flex", alignItems: "center", gap: 2 }}
+                  >
                     <ShowtimeChip time={showtime.startTime} />
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                       <Icon icon="lucide:video" width={20} />
                       <Typography variant="body2" color="text.secondary">
                         {showtime.hall.name}
                       </Typography>
                     </Box>
                     {showtime.hall.features.length > 0 && (
-                      <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
+                      <Box sx={{ display: "flex", gap: 0.5, flexWrap: "wrap" }}>
                         {showtime.hall.features.map((feature: string) => (
-                          <Chip key={feature} label={feature} size="small" variant="outlined" />
+                          <Chip
+                            key={feature}
+                            label={feature}
+                            size="small"
+                            variant="outlined"
+                          />
                         ))}
                       </Box>
                     )}
@@ -138,4 +162,3 @@ export function MovieDetailPage() {
     </Box>
   );
 }
-
