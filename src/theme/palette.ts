@@ -1,34 +1,34 @@
 export const lightPalette = {
   primary: {
-    main: '#5b6fd8',
-    light: '#7d8fe5',
-    dark: '#4356b8',
+    main: '#6b7fd7',
+    light: '#8a9ae3',
+    dark: '#5264b8',
     contrast: '#ffffff',
   },
   secondary: {
-    main: '#6d4c94',
-    light: '#8b6aae',
-    dark: '#543a75',
+    main: '#7d5ba6',
+    light: '#9b7bbe',
+    dark: '#614588',
     contrast: '#ffffff',
   },
   background: {
-    default: '#e8eaed',
-    paper: '#f3f4f6',
+    default: '#f0f2f5',
+    paper: '#f8f9fb',
     elevated: '#ffffff',
   },
   text: {
-    primary: '#1a2332',
-    secondary: '#4a5568',
-    disabled: '#8f9bb3',
+    primary: '#2d3748',
+    secondary: '#5a6c7d',
+    disabled: '#a0aec0',
   },
   border: {
-    main: '#dde2e9',
-    light: '#edf1f7',
+    main: '#e2e8f0',
+    light: '#f1f5f9',
   },
-  success: '#10b981',
-  error: '#ef4444',
-  warning: '#f59e0b',
-  info: '#3b82f6',
+  success: '#48bb78',
+  error: '#f56565',
+  warning: '#ed8936',
+  info: '#4299e1',
 };
 
 export const darkPalette = {

@@ -23,8 +23,9 @@ export function MainLayout({ children }: MainLayoutProps) {
 
   const currentTab = useMemo(() => {
     const path = location.pathname;
-    if (path.startsWith("/halls")) return "/halls";
+    if (path.startsWith("/hall")) return "/halls";
     if (path.startsWith("/schedule")) return "/schedule";
+    if (path.startsWith("/movie/")) return "/";
     return "/";
   }, [location.pathname]);
 

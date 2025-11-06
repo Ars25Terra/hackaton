@@ -26,7 +26,7 @@ import {
 
 export function SchedulePage() {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { movies, halls, showtimes, loading } = useData();
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
@@ -73,7 +73,7 @@ export function SchedulePage() {
           message={
             selectedDate
               ? t("schedule.noScheduleForDate", {
-                  date: formatDate(selectedDate),
+                  date: formatDate(selectedDate, i18n.language),
                 })
               : t("schedule.noSchedule")
           }
@@ -83,7 +83,7 @@ export function SchedulePage() {
           {Array.from(groupedShowtimes.entries()).map(([date, times]) => (
             <Paper key={date} sx={{ p: 3 }}>
               <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
-                {formatDate(date)}
+                {formatDate(date, i18n.language)}
               </Typography>
               <Divider sx={{ mb: 2 }} />
               <Stack spacing={2}>

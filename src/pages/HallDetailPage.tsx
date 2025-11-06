@@ -29,7 +29,7 @@ import {
 export function HallDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { movies, halls, showtimes, loading } = useData();
 
   const hall = useMemo(() => {
@@ -110,7 +110,7 @@ export function HallDetailPage() {
           {Array.from(groupedShowtimes.entries()).map(([date, times]) => (
             <Paper key={date} sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-                {formatDate(date)}
+                {formatDate(date, i18n.language)}
               </Typography>
               <Divider sx={{ mb: 2 }} />
               <Stack spacing={2}>

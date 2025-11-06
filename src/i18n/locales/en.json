@@ -29,8 +29,9 @@
     "title": "Complete Schedule",
     "filterByDate": "Filter by date",
     "filterByMovie": "Filter by movie",
-    "allDates": "All dates",
+    "allDates": "All Dates",
     "allMovies": "All movies",
+    "today": "Today",
     "noSchedule": "No showtimes available",
     "noScheduleForDate": "No showtimes available for {{date}}"
   },

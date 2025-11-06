@@ -1,5 +1,6 @@
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { formatDate, getDateRange, isDateToday } from "../utils/dateUtils";
 
 interface DateFilterProps {
@@ -8,6 +9,7 @@ interface DateFilterProps {
 }
 
 export function DateFilter({ selectedDate, onChange }: DateFilterProps) {
+  const { t, i18n } = useTranslation();
   const dates = useMemo(() => getDateRange(7), []);
 
   return (
@@ -28,11 +30,13 @@ export function DateFilter({ selectedDate, onChange }: DateFilterProps) {
       }}
     >
       <ToggleButton value="all" aria-label="all dates">
-        All Dates
+        {t("schedule.allDates")}
       </ToggleButton>
       {dates.map((date) => (
         <ToggleButton key={date} value={date} aria-label={date}>
-          {isDateToday(date) ? "Today" : formatDate(date)}
+          {isDateToday(date)
+            ? t("schedule.today")
+            : formatDate(date, i18n.language)}
         </ToggleButton>
       ))}
     </ToggleButtonGroup>

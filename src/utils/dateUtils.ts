@@ -15,9 +15,9 @@ export function getDateRange(days: number = 7): string[] {
   return dates;
 }
 
-export function formatDate(dateStr: string): string {
+export function formatDate(dateStr: string, locale: string = 'en-US'): string {
   const date = new Date(dateStr);
-  return date.toLocaleDateString('en-US', { 
+  return date.toLocaleDateString(locale, { 
     weekday: 'short', 
     month: 'short', 
     day: 'numeric' 

@@ -31,6 +31,7 @@
     "filterByMovie": "Фильтр по фильму",
     "allDates": "Все даты",
     "allMovies": "Все фильмы",
+    "today": "Сегодня",
     "noSchedule": "Нет доступных сеансов",
     "noScheduleForDate": "Нет доступных сеансов на {{date}}"
   },

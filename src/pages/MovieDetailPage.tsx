@@ -29,7 +29,7 @@ import placeholderImage from "/placeholder-movie.svg";
 export function MovieDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { movies, halls, showtimes, loading } = useData();
   const [imgError, setImgError] = useState(false);
 
@@ -138,7 +138,7 @@ export function MovieDetailPage() {
           {Array.from(groupedShowtimes.entries()).map(([date, times]) => (
             <Paper key={date} sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-                {formatDate(date)}
+                {formatDate(date, i18n.language)}
               </Typography>
               <Divider sx={{ mb: 2 }} />
               <Stack spacing={2}>
