@@ -12,9 +12,9 @@ export function DateFilter({ selectedDate, onChange }: DateFilterProps) {
 
   return (
     <ToggleButtonGroup
-      value={selectedDate}
+      value={selectedDate || 'all'}
       exclusive
-      onChange={(_, value) => onChange(value)}
+      onChange={(_, value) => onChange(value === 'all' ? null : value)}
       aria-label="date filter"
       sx={{
         flexWrap: 'wrap',
@@ -27,7 +27,7 @@ export function DateFilter({ selectedDate, onChange }: DateFilterProps) {
         },
       }}
     >
-      <ToggleButton value={null} aria-label="all dates">
+      <ToggleButton value="all" aria-label="all dates">
         All Dates
       </ToggleButton>
       {dates.map((date) => (

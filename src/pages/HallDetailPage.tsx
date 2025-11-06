@@ -16,6 +16,7 @@ import { combineShowtimeData, filterUpcomingShowtimes, filterShowtimesByHall, gr
 import { formatDate } from '../utils/dateUtils';
 import { ShowtimeChip } from '../components/ShowtimeChip';
 import { EmptyState } from '../components/EmptyState';
+import { ShowtimeWithDetails } from '../types';
 
 export function HallDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -91,7 +92,7 @@ export function HallDetailPage() {
               </Typography>
               <Divider sx={{ mb: 2 }} />
               <Stack spacing={2}>
-                {times.map((showtime) => (
+                {times.map((showtime: ShowtimeWithDetails) => (
                   <Box
                     key={showtime.id}
                     sx={{

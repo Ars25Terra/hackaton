@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Movie, Hall, Showtime, ShowtimeWithDetails } from '../types';
+import { Movie, Hall, Showtime } from '../types';
 
 const dataCache: {
   movies?: Movie[];

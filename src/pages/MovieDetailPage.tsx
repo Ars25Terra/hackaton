@@ -16,6 +16,7 @@ import { combineShowtimeData, filterUpcomingShowtimes, filterShowtimesByMovie, g
 import { formatDate } from '../utils/dateUtils';
 import { ShowtimeChip } from '../components/ShowtimeChip';
 import { EmptyState } from '../components/EmptyState';
+import { ShowtimeWithDetails } from '../types';
 
 export function MovieDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -108,7 +109,7 @@ export function MovieDetailPage() {
               </Typography>
               <Divider sx={{ mb: 2 }} />
               <Stack spacing={2}>
-                {times.map((showtime) => (
+                {times.map((showtime: ShowtimeWithDetails) => (
                   <Box key={showtime.id} sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                     <ShowtimeChip time={showtime.startTime} />
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -119,7 +120,7 @@ export function MovieDetailPage() {
                     </Box>
                     {showtime.hall.features.length > 0 && (
                       <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
-                        {showtime.hall.features.map((feature) => (
+                        {showtime.hall.features.map((feature: string) => (
                           <Chip key={feature} label={feature} size="small" variant="outlined" />
                         ))}
                       </Box>
