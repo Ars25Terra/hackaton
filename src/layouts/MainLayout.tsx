@@ -22,7 +22,7 @@ export function MainLayout({ children }: MainLayoutProps) {
       <AppBar position="static" elevation={2}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 600 }}>
-            Cinema finder
+            Arseny's Cinema finder
           </Typography>
           <ThemeToggle />
         </Toolbar>
