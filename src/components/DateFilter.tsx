@@ -1,6 +1,6 @@
-import { useMemo } from 'react';
-import { ToggleButtonGroup, ToggleButton } from '@mui/material';
-import { getDateRange, formatDate, isDateToday } from '../utils/dateUtils';
+import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+import { useMemo } from "react";
+import { formatDate, getDateRange, isDateToday } from "../utils/dateUtils";
 
 interface DateFilterProps {
   selectedDate: string | null;
@@ -12,14 +12,14 @@ export function DateFilter({ selectedDate, onChange }: DateFilterProps) {
 
   return (
     <ToggleButtonGroup
-      value={selectedDate || 'all'}
+      value={selectedDate || "all"}
       exclusive
-      onChange={(_, value) => onChange(value === 'all' ? null : value)}
+      onChange={(_, value) => onChange(value === "all" ? null : value)}
       aria-label="date filter"
       sx={{
-        flexWrap: 'wrap',
+        flexWrap: "wrap",
         gap: 1,
-        '& .MuiToggleButton-root': {
+        "& .MuiToggleButton-root": {
           border: 1,
           borderRadius: 2,
           px: 2,
@@ -32,10 +32,9 @@ export function DateFilter({ selectedDate, onChange }: DateFilterProps) {
       </ToggleButton>
       {dates.map((date) => (
         <ToggleButton key={date} value={date} aria-label={date}>
-          {isDateToday(date) ? 'Today' : formatDate(date)}
+          {isDateToday(date) ? "Today" : formatDate(date)}
         </ToggleButton>
       ))}
     </ToggleButtonGroup>
   );
 }
-

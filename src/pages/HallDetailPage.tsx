@@ -1,22 +1,27 @@
-import { useMemo } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { Icon } from "@iconify/react";
 import {
   Box,
-  Typography,
-  Chip,
-  Paper,
   Button,
+  Chip,
   CircularProgress,
   Divider,
+  Paper,
   Stack,
-} from '@mui/material';
-import { Icon } from '@iconify/react';
-import { useData } from '../hooks/useData';
-import { combineShowtimeData, filterUpcomingShowtimes, filterShowtimesByHall, groupShowtimesByDate } from '../utils/showtimeUtils';
-import { formatDate } from '../utils/dateUtils';
-import { ShowtimeChip } from '../components/ShowtimeChip';
-import { EmptyState } from '../components/EmptyState';
-import { ShowtimeWithDetails } from '../types';
+  Typography,
+} from "@mui/material";
+import { useMemo } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { EmptyState } from "../components/EmptyState";
+import { ShowtimeChip } from "../components/ShowtimeChip";
+import { useData } from "../hooks/useData";
+import { ShowtimeWithDetails } from "../types";
+import { formatDate } from "../utils/dateUtils";
+import {
+  combineShowtimeData,
+  filterShowtimesByHall,
+  filterUpcomingShowtimes,
+  groupShowtimesByDate,
+} from "../utils/showtimeUtils";
 
 export function HallDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -24,12 +29,12 @@ export function HallDetailPage() {
   const { movies, halls, showtimes, loading } = useData();
 
   const hall = useMemo(() => {
-    return halls.find(h => h.id === id);
+    return halls.find((h) => h.id === id);
   }, [halls, id]);
 
   const groupedShowtimes = useMemo(() => {
     if (!id) return new Map();
-    
+
     const combined = combineShowtimeData(showtimes, movies, halls);
     const upcoming = filterUpcomingShowtimes(combined);
     const forHall = filterShowtimesByHall(upcoming, id);
@@ -38,7 +43,7 @@ export function HallDetailPage() {
 
   if (loading) {
     return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}>
+      <Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>
         <CircularProgress />
       </Box>
     );
@@ -52,25 +57,30 @@ export function HallDetailPage() {
     <Box>
       <Button
         startIcon={<Icon icon="lucide:arrow-left" />}
-        onClick={() => navigate('/halls')}
+        onClick={() => navigate("/halls")}
         sx={{ mb: 3 }}
       >
         Back to Halls
       </Button>
 
       <Paper sx={{ p: 3, mb: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom sx={{ fontWeight: 700 }}>
+        <Typography
+          variant="h4"
+          component="h1"
+          gutterBottom
+          sx={{ fontWeight: 700 }}
+        >
           {hall.name}
         </Typography>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
           <Icon icon="lucide:users" width={24} />
           <Typography variant="h6" color="text.secondary">
             Capacity: {hall.capacity} seats
           </Typography>
         </Box>
 
-        <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+        <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
           {hall.features.map((feature) => (
             <Chip key={feature} label={feature} color="primary" />
           ))}
@@ -96,10 +106,10 @@ export function HallDetailPage() {
                   <Box
                     key={showtime.id}
                     sx={{
-                      display: 'flex',
-                      alignItems: 'center',
+                      display: "flex",
+                      alignItems: "center",
                       gap: 2,
-                      flexWrap: 'wrap',
+                      flexWrap: "wrap",
                     }}
                   >
                     <ShowtimeChip
@@ -108,11 +118,11 @@ export function HallDetailPage() {
                     />
                     <Box
                       sx={{
-                        display: 'flex',
-                        alignItems: 'center',
+                        display: "flex",
+                        alignItems: "center",
                         gap: 1,
-                        cursor: 'pointer',
-                        '&:hover': { textDecoration: 'underline' },
+                        cursor: "pointer",
+                        "&:hover": { textDecoration: "underline" },
                       }}
                       onClick={() => navigate(`/movie/${showtime.movieId}`)}
                     >
@@ -134,4 +144,3 @@ export function HallDetailPage() {
     </Box>
   );
 }
-
