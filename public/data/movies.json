@@ -15,7 +15,7 @@
     "genre": "Crime Thriller",
     "duration": 132,
     "rating": "R",
-    "coverImageUrl": "data:image/svg+xml,%3Csvg width='400' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232c3e50;stop-opacity:1'/%3E%3Cstop offset='100%25' style='stop-color:%2334495e;stop-opacity:1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='600' fill='url(%23g2)'/%3E%3Ctext x='200' y='280' font-family='Arial' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3EThe Last%3C/text%3E%3Ctext x='200' y='320' font-family='Arial' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3EDetective%3C/text%3E%3C/svg%3E",
+    "coverImageUrl": "/posters/detective.jpg",
     "description": "A hardboiled detective faces his most challenging case yet in this neo-noir thriller. As the bodies pile up, he must confront demons from his past to catch a killer.",
     "director": "David Fincher"
   },
@@ -25,7 +25,7 @@
     "genre": "Comedy",
     "duration": 98,
     "rating": "PG",
-    "coverImageUrl": "data:image/svg+xml,%3Csvg width='400' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f39c12;stop-opacity:1'/%3E%3Cstop offset='100%25' style='stop-color:%23e74c3c;stop-opacity:1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='600' fill='url(%23g3)'/%3E%3Ctext x='200' y='280' font-family='Arial' font-size='32' font-weight='bold' fill='white' text-anchor='middle'%3ELaugh Out%3C/text%3E%3Ctext x='200' y='320' font-family='Arial' font-size='32' font-weight='bold' fill='white' text-anchor='middle'%3ELoud%3C/text%3E%3C/svg%3E",
+    "coverImageUrl": "/posters/comedy.jpg",
     "description": "A hilarious comedy about a struggling comedian who accidentally becomes an internet sensation. Feel-good entertainment perfect for the whole family.",
     "director": "Judd Apatow"
   },
@@ -35,7 +35,7 @@
     "genre": "Romance Drama",
     "duration": 116,
     "rating": "PG-13",
-    "coverImageUrl": "data:image/svg+xml,%3Csvg width='400' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ec4899;stop-opacity:1'/%3E%3Cstop offset='100%25' style='stop-color:%23f43f5e;stop-opacity:1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='600' fill='url(%23g4)'/%3E%3Ctext x='200' y='290' font-family='Arial' font-size='36' font-weight='bold' fill='white' text-anchor='middle'%3EEternal%3C/text%3E%3Ctext x='200' y='330' font-family='Arial' font-size='36' font-weight='bold' fill='white' text-anchor='middle'%3ELove%3C/text%3E%3C/svg%3E",
+    "coverImageUrl": "/posters/romance.jpg",
     "description": "A timeless love story that spans decades. Two souls destined to be together face the challenges of life, war, and time itself in this emotional journey.",
     "director": "James Cameron"
   },
@@ -55,7 +55,7 @@
     "genre": "Horror",
     "duration": 102,
     "rating": "R",
-    "coverImageUrl": "data:image/svg+xml,%3Csvg width='400' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='g6' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%238e44ad;stop-opacity:1'/%3E%3Cstop offset='100%25' style='stop-color:%239b59b6;stop-opacity:1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='600' fill='url(%23g6)'/%3E%3Ctext x='200' y='280' font-family='Arial' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3EThe Haunting%3C/text%3E%3Ctext x='200' y='320' font-family='Arial' font-size='28' font-weight='bold' fill='white' text-anchor='middle'%3EHour%3C/text%3E%3C/svg%3E",
+    "coverImageUrl": "/posters/horror.jpg",
     "description": "A family moves into a seemingly perfect house, only to discover it harbors dark secrets. Terrifying supernatural horror that will keep you on the edge of your seat.",
     "director": "James Wan"
   }
