@@ -12,8 +12,8 @@ export const lightPalette = {
     contrast: '#ffffff',
   },
   background: {
-    default: '#f0f2f5',
-    paper: '#f8f9fb',
+    default: '#e3e6ea',
+    paper: '#eef1f4',
     elevated: '#ffffff',
   },
   text: {
