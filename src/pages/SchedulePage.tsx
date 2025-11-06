@@ -15,7 +15,7 @@ import { DateFilter } from "../components/DateFilter";
 import { EmptyState } from "../components/EmptyState";
 import { ShowtimeChip } from "../components/ShowtimeChip";
 import { useData } from "../hooks/useData";
-import { formatDate } from "../utils/dateUtils";
+import { formatDate, getTodayDate } from "../utils/dateUtils";
 import { getTranslatedHall, getTranslatedMovie } from "../utils/i18nData";
 import {
   combineShowtimeData,
@@ -28,7 +28,7 @@ export function SchedulePage() {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const { movies, halls, showtimes, loading } = useData();
-  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+  const [selectedDate, setSelectedDate] = useState<string | null>(getTodayDate());
 
   const groupedShowtimes = useMemo(() => {
     const translatedMovies = movies.map((m) => getTranslatedMovie(m, t));
