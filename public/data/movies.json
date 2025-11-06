@@ -5,7 +5,7 @@
     "genre": "Sci-Fi Adventure",
     "duration": 148,
     "rating": "PG-13",
-    "coverImageUrl": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=600&fit=crop",
+    "coverImageUrl": "https://via.placeholder.com/400x600/667eea/ffffff?text=Cosmic+Odyssey",
     "description": "An epic journey through space and time as humanity searches for a new home among the stars. Stunning visuals and thought-provoking themes make this a must-see cinematic experience.",
     "director": "Christopher Nolan"
   },
@@ -15,7 +15,7 @@
     "genre": "Crime Thriller",
     "duration": 132,
     "rating": "R",
-    "coverImageUrl": "https://images.unsplash.com/photo-1574267432644-f65ff8e5e292?w=400&h=600&fit=crop",
+    "coverImageUrl": "https://via.placeholder.com/400x600/2c3e50/ffffff?text=The+Last+Detective",
     "description": "A hardboiled detective faces his most challenging case yet in this neo-noir thriller. As the bodies pile up, he must confront demons from his past to catch a killer.",
     "director": "David Fincher"
   },
@@ -25,7 +25,7 @@
     "genre": "Comedy",
     "duration": 98,
     "rating": "PG",
-    "coverImageUrl": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=600&fit=crop",
+    "coverImageUrl": "https://via.placeholder.com/400x600/f39c12/ffffff?text=Laugh+Out+Loud",
     "description": "A hilarious comedy about a struggling comedian who accidentally becomes an internet sensation. Feel-good entertainment perfect for the whole family.",
     "director": "Judd Apatow"
   },
@@ -35,7 +35,7 @@
     "genre": "Romance Drama",
     "duration": 116,
     "rating": "PG-13",
-    "coverImageUrl": "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=600&fit=crop",
+    "coverImageUrl": "https://via.placeholder.com/400x600/e74c3c/ffffff?text=Eternal+Love",
     "description": "A timeless love story that spans decades. Two souls destined to be together face the challenges of life, war, and time itself in this emotional journey.",
     "director": "James Cameron"
   },
@@ -45,7 +45,7 @@
     "genre": "Action",
     "duration": 124,
     "rating": "R",
-    "coverImageUrl": "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?w=400&h=600&fit=crop",
+    "coverImageUrl": "https://via.placeholder.com/400x600/34495e/ffffff?text=Shadow+Warriors",
     "description": "An elite team of special operatives must stop a global threat in this explosive action thriller. Non-stop adrenaline from start to finish.",
     "director": "Michael Bay"
   },
@@ -55,7 +55,7 @@
     "genre": "Horror",
     "duration": 102,
     "rating": "R",
-    "coverImageUrl": "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?w=400&h=600&fit=crop",
+    "coverImageUrl": "https://via.placeholder.com/400x600/8e44ad/ffffff?text=The+Haunting+Hour",
     "description": "A family moves into a seemingly perfect house, only to discover it harbors dark secrets. Terrifying supernatural horror that will keep you on the edge of your seat.",
     "director": "James Wan"
   }

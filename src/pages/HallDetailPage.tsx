@@ -15,10 +15,11 @@ import { EmptyState } from "../components/EmptyState";
 import { ShowtimeChip } from "../components/ShowtimeChip";
 import { useData } from "../hooks/useData";
 import { ShowtimeWithDetails } from "../types";
-import { formatDate } from "../utils/dateUtils";
+import { formatDate, getDateRange } from "../utils/dateUtils";
 import {
   combineShowtimeData,
   filterShowtimesByHall,
+  filterShowtimesInDateRange,
   filterUpcomingShowtimes,
   groupShowtimesByDate,
 } from "../utils/showtimeUtils";
@@ -35,9 +36,14 @@ export function HallDetailPage() {
   const groupedShowtimes = useMemo(() => {
     if (!id) return new Map();
 
+    const dateRange = getDateRange(7);
+    const startDate = dateRange[0];
+    const endDate = dateRange[dateRange.length - 1];
+
     const combined = combineShowtimeData(showtimes, movies, halls);
     const upcoming = filterUpcomingShowtimes(combined);
-    const forHall = filterShowtimesByHall(upcoming, id);
+    const inRange = filterShowtimesInDateRange(upcoming, startDate, endDate);
+    const forHall = filterShowtimesByHall(inRange, id);
     return groupShowtimesByDate(forHall);
   }, [id, showtimes, movies, halls]);
 

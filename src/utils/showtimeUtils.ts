@@ -76,3 +76,11 @@ export function sortShowtimesByTime(showtimes: ShowtimeWithDetails[]): ShowtimeW
   });
 }
 
+export function filterShowtimesInDateRange(
+  showtimes: ShowtimeWithDetails[],
+  startDate: string,
+  endDate: string
+): ShowtimeWithDetails[] {
+  return showtimes.filter(s => s.date >= startDate && s.date <= endDate);
+}
+
