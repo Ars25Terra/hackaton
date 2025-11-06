@@ -22,6 +22,7 @@ import {
   filterUpcomingShowtimes,
   groupShowtimesByDate,
 } from "../utils/showtimeUtils";
+import placeholderImage from "/placeholder-movie.svg";
 
 export function MovieDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -74,7 +75,7 @@ export function MovieDetailPage() {
         >
           <Box
             component="img"
-            src={imgError ? "/placeholder-movie.svg" : movie.coverImageUrl}
+            src={imgError ? placeholderImage : movie.coverImageUrl}
             alt={movie.title}
             onError={() => setImgError(true)}
             sx={{

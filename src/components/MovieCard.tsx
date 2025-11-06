@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { Movie } from "../types";
+import placeholderImage from "/placeholder-movie.svg";
 
 interface MovieCardProps {
   movie: Movie;
@@ -36,7 +37,7 @@ export function MovieCard({ movie, onClick }: MovieCardProps) {
       <CardMedia
         component="img"
         height={360}
-        image={imgError ? "/placeholder-movie.svg" : movie.coverImageUrl}
+        image={imgError ? placeholderImage : movie.coverImageUrl}
         alt={movie.title}
         onError={() => setImgError(true)}
         sx={{ objectFit: "cover", bgcolor: "#2a2a2a" }}
